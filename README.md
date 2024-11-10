@@ -1,4 +1,4 @@
-This project consists of uploading files to a shared folder on Google Drive.
+This project consists of uploading, download, list and exclude files to a shared folder on Google Drive.
 
 To use the project, you need to register an API project on Google Cloud https://console.cloud.google.com
 
