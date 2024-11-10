@@ -255,7 +255,7 @@ func downloadFile() error {
 	// Listar arquivos na pasta
 	files, err := listFilesInFolder(srv, FolderID)
 	if err != nil {
-		return fmt.Errorf("erro ao listar arquivos: %v", err)
+		return fmt.Errorf("Erro ao listar arquivos: %v", err)
 	}
 
 	// Se não houver arquivos, mostrar mensagem e retornar
@@ -310,14 +310,14 @@ func downloadFile() error {
 	// Baixar o conteúdo do arquivo do Google Drive
 	res, err := srv.Files.Get(fileID).Download()
 	if err != nil {
-		return fmt.Errorf("erro ao baixar o arquivo: %v", err)
+		return fmt.Errorf("Erro ao baixar o arquivo: %v", err)
 	}
 	defer res.Body.Close()
 
 	// Copiar o conteúdo para o arquivo local
 	_, err = io.Copy(file, res.Body)
 	if err != nil {
-		return fmt.Errorf("erro ao salvar o arquivo: %v", err)
+		return fmt.Errorf("Erro ao salvar o arquivo: %v", err)
 	}
 
 	fmt.Printf("\nArquivo baixado com sucesso para: %s\n", savePath)
